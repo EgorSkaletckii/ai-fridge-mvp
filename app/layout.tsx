@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Fridge MVP",
-  description: "A simple fridge dashboard with mock products and urgency sorting."
+  title: "Мой холодильник",
+  description: "Простой дашборд холодильника с моковыми продуктами и сортировкой по срочности."
 };
 
 type RootLayoutProps = Readonly<{
@@ -13,7 +13,7 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body>{children}</body>
     </html>
   );

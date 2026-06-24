@@ -20,7 +20,7 @@ export function ProductCard({ product, statusLabel }: ProductCardProps) {
       </div>
 
       <div className="card-footer">
-        <span>Expires {product.expirationDate}</span>
+        <span>Срок годности до {product.expirationDate}</span>
         <span>{product.daysUntilExpiryText}</span>
       </div>
     </article>

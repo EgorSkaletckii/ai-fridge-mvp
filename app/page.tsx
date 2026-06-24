@@ -15,34 +15,34 @@ export default function HomePage() {
     <main className="page-shell">
       <section className="hero-card">
         <div className="hero-copy">
-          <p className="eyebrow">AI Fridge MVP</p>
-          <h1>My Fridge</h1>
+          <p className="eyebrow">Прототип приложения</p>
+          <h1>Мой холодильник</h1>
           <p className="hero-text">
-            Keep an eye on what should be eaten first and get a quick cooking
-            idea from the products already at home.
+            Следите за тем, что нужно съесть в первую очередь, и получайте
+            простую идею блюда из продуктов, которые уже есть дома.
           </p>
         </div>
 
         <div className="hero-actions">
           <button type="button" className="primary-button">
-            Add Product
+            Добавить продукт
           </button>
           <button type="button" className="secondary-button">
-            What to cook?
+            Что приготовить?
           </button>
         </div>
 
-        <dl className="hero-stats" aria-label="Fridge summary">
+        <dl className="hero-stats" aria-label="Сводка по холодильнику">
           <div>
-            <dt>Products</dt>
+            <dt>Продукты</dt>
             <dd>{sortedProducts.length}</dd>
           </div>
           <div>
-            <dt>Expired</dt>
+            <dt>Просрочено</dt>
             <dd>{sortedProducts.filter((product) => product.status === "expired").length}</dd>
           </div>
           <div>
-            <dt>Eat Soon</dt>
+            <dt>Съесть в первую очередь</dt>
             <dd>
               {
                 sortedProducts.filter((product) => product.status === "expiring-soon")
@@ -57,11 +57,12 @@ export default function HomePage() {
         <div className="panel">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">Urgency Sorted</p>
-              <h2>Products to check first</h2>
+              <p className="eyebrow">Сортировка по срочности</p>
+              <h2>Что проверить в первую очередь</h2>
             </div>
             <span className="helper-text">
-              Expired items first, then products expiring within 3 days.
+              Сначала просроченные продукты, затем те, что испортятся в течение
+              3 дней.
             </span>
           </div>
 
@@ -84,8 +85,8 @@ export default function HomePage() {
           <section className="panel suggestion-panel">
             <div className="panel-heading">
               <div>
-                <p className="eyebrow">Quick Idea</p>
-                <h2>What to cook?</h2>
+                <p className="eyebrow">Быстрая идея</p>
+                <h2>Что приготовить?</h2>
               </div>
             </div>
             <p className="suggestion-title">{cookSuggestion.title}</p>
@@ -100,8 +101,8 @@ export default function HomePage() {
           <section className="panel">
             <div className="panel-heading">
               <div>
-                <p className="eyebrow">Empty State</p>
-                <h2>Ready for no products</h2>
+                <p className="eyebrow">Пустое состояние</p>
+                <h2>Экран для пустого холодильника</h2>
               </div>
             </div>
             <EmptyState compact />

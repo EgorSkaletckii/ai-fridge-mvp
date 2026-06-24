@@ -20,53 +20,53 @@ type CookSuggestion = {
 export const mockProducts: Product[] = [
   {
     id: "yogurt",
-    name: "Greek Yogurt",
-    category: "Dairy",
-    quantity: "2 cups",
+    name: "Греческий йогурт",
+    category: "Молочные продукты",
+    quantity: "2 стакана",
     expirationDate: "2026-06-22",
     status: "expired",
     daysUntilExpiry: -2,
-    daysUntilExpiryText: "Expired 2 days ago"
+    daysUntilExpiryText: "Просрочен 2 дня назад"
   },
   {
     id: "spinach",
-    name: "Baby Spinach",
-    category: "Vegetables",
-    quantity: "1 bag",
+    name: "Молодой шпинат",
+    category: "Овощи",
+    quantity: "1 пакет",
     expirationDate: "2026-06-25",
     status: "expiring-soon",
     daysUntilExpiry: 1,
-    daysUntilExpiryText: "Expires tomorrow"
+    daysUntilExpiryText: "Испортится завтра"
   },
   {
     id: "chicken",
-    name: "Chicken Breast",
-    category: "Protein",
-    quantity: "450 g",
+    name: "Куриная грудка",
+    category: "Белковые продукты",
+    quantity: "450 г",
     expirationDate: "2026-06-27",
     status: "expiring-soon",
     daysUntilExpiry: 3,
-    daysUntilExpiryText: "Expires in 3 days"
+    daysUntilExpiryText: "Испортится через 3 дня"
   },
   {
     id: "eggs",
-    name: "Eggs",
-    category: "Dairy",
-    quantity: "8 left",
+    name: "Яйца",
+    category: "Молочные продукты",
+    quantity: "Осталось 8 штук",
     expirationDate: "2026-07-02",
     status: "fresh",
     daysUntilExpiry: 8,
-    daysUntilExpiryText: "Safe for 8 more days"
+    daysUntilExpiryText: "Свежие ещё 8 дней"
   },
   {
     id: "tomatoes",
-    name: "Cherry Tomatoes",
-    category: "Vegetables",
-    quantity: "1 box",
+    name: "Томаты черри",
+    category: "Овощи",
+    quantity: "1 упаковка",
     expirationDate: "2026-07-04",
     status: "fresh",
     daysUntilExpiry: 10,
-    daysUntilExpiryText: "Safe for 10 more days"
+    daysUntilExpiryText: "Свежие ещё 10 дней"
   }
 ];
 
@@ -92,11 +92,11 @@ export function sortProductsByUrgency(products: Product[]) {
 export function getStatusLabel(status: ProductStatus) {
   switch (status) {
     case "expired":
-      return "Expired";
+      return "Просрочен";
     case "expiring-soon":
-      return "Expiring Soon";
+      return "Скоро испортится";
     case "fresh":
-      return "Fresh";
+      return "Свежий";
   }
 }
 
@@ -104,9 +104,9 @@ export function getCookSuggestion(products: Product[]): CookSuggestion {
   const ingredients = products.slice(0, 3).map((product) => product.name);
 
   return {
-    title: "Cook a quick skillet bowl",
+    title: "Приготовьте быструю сковороду с овощами и курицей",
     description:
-      "Use the products with the most urgency first and turn them into a fast lunch or dinner.",
+      "Сначала используйте самые срочные продукты и соберите из них быстрый обед или ужин.",
     ingredients
   };
 }
