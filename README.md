@@ -54,3 +54,38 @@ Develop the project in small, reviewable steps:
 5. Add persistence only after the core user flow is easy to test and review.
 
 This keeps the project inside MVP scope and prioritizes a working prototype over premature architecture.
+
+## Local Development
+
+This repository now includes a minimal Next.js + React + TypeScript MVP shell.
+
+Run it locally with:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+## Current MVP Screen
+
+The initial app shell includes:
+
+- a mobile-first "My Fridge" screen
+- mocked product cards with category, quantity, expiration date, and status
+- urgency sorting for expired and soon-to-expire products
+- a visible "Add Product" button
+- a visible "What to cook?" button
+- a reusable empty state component
+
+## Intentionally Left Out
+
+This setup does not yet include:
+
+- authentication
+- database or persistence
+- real product creation
+- receipt recognition
+- delivery integrations
+- paid APIs
